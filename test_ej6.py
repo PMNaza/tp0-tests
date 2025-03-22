@@ -8,8 +8,8 @@ CLIENT_CONFIG = {
 }
 
 def generate_agency_file(filename, register_amount):
-  os.makedirs(os.path.dirname(f'{os.environ['REPO_PATH']}/.data'), exist_ok=True)
-  with open(f'{os.environ['REPO_PATH']}/.data/{filename}', "w+") as file:
+  os.makedirs(os.path.dirname(f'{os.environ["REPO_PATH"]}/.data'), exist_ok=True)
+  with open(f'{os.environ["REPO_PATH"]}/.data/{filename}', "w+") as file:
     for i in range(register_amount):
       file.write(f'A,B,{str(i).zfill(8)},2000-01-01,{i}\n')
 
