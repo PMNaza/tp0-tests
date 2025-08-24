@@ -1,5 +1,6 @@
 import os
 import pytest
+import time
 from utils import git, docker, config, scripts, line_parser
 
 CLIENT_CONFIG_A = {
@@ -27,6 +28,7 @@ SERVER_CONFIG_B = {
 def _test_config(client_config=None, server_config=None):
 	config.server(**(server_config or {}))
 	config.client(**(client_config or {}))
+	time.sleep(0.5)
 	scripts.generate_docker_compose(1)
 	docker.up()
 	logs = docker.logs()
