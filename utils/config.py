@@ -9,6 +9,4 @@ def client(address = "server:12345", loop_amount = 3, loop_period= "50ms", log_l
 def server(port=12345, ip="server", listen_backlog=5, logging_level="INFO"):
 	file = open("./server/config.ini", "w")
 	file.write(f'[DEFAULT]\nSERVER_PORT = {port}\nSERVER_IP = {ip}\nSERVER_LISTEN_BACKLOG = {listen_backlog}\nLOGGING_LEVEL = {logging_level}')
-	file.flush()
-	os.fsync(file.fileno())
 	file.close()
